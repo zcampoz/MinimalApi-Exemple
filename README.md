@@ -10,6 +10,7 @@ A simple and clean example demonstrating how to build a **Minimal API** using **
 - ✅ Clean and simple architecture
 - ✅ Full CRUD operations for To‑Do items
 - ✅ Docker support with `.dockerignore` for optimized builds
+- ✅ Integrate Swagger for API documentation
 
 ---
 
@@ -54,28 +55,28 @@ MinimalApi-Exemple/
 
 3. Open your browser or API client and go to:
    ```
-   http://localhost:5000
+   http://localhost:5000/swagger
    ```
    or
    ```
-   https://localhost:5001
+   https://localhost:5001/swagger
    ```
 
 ### Run with Docker
 
 1. Build the Docker image:
    ```bash
-   docker build -t minimalapi-exemple .
+   docker build -t todoapi .
    ```
 
 2. Run the container:
    ```bash
-   docker run -d -p 5000:80 minimalapi-exemple
+   docker run -d -p 8080:8080 --name todoapi todoapi
    ```
 
 3. Access the API at:
    ```
-   http://localhost:5000
+   http://localhost:8080/swagger
    ```
 
 ---
@@ -93,6 +94,5 @@ MinimalApi-Exemple/
 ## ✅ Future Improvement
 
 - Add unit tests (e.g., with xUnit)
-- Integrate Swagger for API documentation
 - Implement authentication (e.g., JWT)
 - Set up CI/CD pipelines for deployment
